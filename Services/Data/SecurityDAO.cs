@@ -1,4 +1,6 @@
-﻿using GroceryShop.Models;
+﻿//Security DAO = Security Data Access Object
+
+using GroceryShop.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -46,7 +48,7 @@ namespace GroceryShop.Services.Data
                     Console.WriteLine(e.Message);
                 }
             }
-            return success;g
+            return success;
         }
     }
 }
