@@ -1,4 +1,5 @@
 ﻿using GroceryShop.Models;
+using GroceryShop.Services.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,9 @@ namespace GroceryShop.Controllers
         {
             //genarate some fake data and send it to a view
             List<ProductModel> products = new List<ProductModel>();
-            products.Add(new ProductModel(1, "Potato", "Pran", "Dryfoods", "Yes", "potato details", "10", "potato.jpg"));
-            products.Add(new ProductModel(2, "Soyabin Oil", "Fresh", "Daily Product", "Yes", "oil details", "130", "Oil.jpg"));
+            ProductDAO productDAO = new ProductDAO();
+
+            products = productDAO.FetchAll();
 
             return View("Index", products);
         }
